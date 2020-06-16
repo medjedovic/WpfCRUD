@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfCRUD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCRUD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Label Content="pretraga" FontSize="20" Margin="5"/>
+            <TextBox Width="481" FontSize="20" Text="{Binding pretraga, UpdateSourceTrigger=PropertyChanged}" Height="30"/>
+        </StackPanel>
+        <GroupBox Header="Upravljanje artiklima" Background="LightCyan">
+            <StackPanel DockPanel.Dock="Left" VerticalAlignment="Top">
+                <Button Content="ADD Artikal" FontSize="20" Margin="10 20 5 10"  Click="btnA"/>
+                <Button Content="EDIT Artikal" FontSize="20" Margin="10 5 5 10" Click="btnE"/>
+                <Button Content="DEL Artikal" FontSize="20" Margin="10 5 5 10" Click="btnD"/>
+                
+                <TextBlock Text="____________" FontSize="20" Margin="10 5 5 10" TextAlignment="Center"/>
+                <Button Content="KORISNIK MGMT" FontSize="24" Margin="10 5 5 10" Click="btnKorisnik"/>
+            </StackPanel>
+        </GroupBox>
+        <DataGrid Name="dgArtikli" AutoGenerateColumns="False" FontSize="24" IsReadOnly="True" ColumnWidth="*" AlternatingRowBackground="LightBlue" AlternationCount="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Šifra Artikla" Binding="{Binding sifra}" Width="*"/>
+                <DataGridTextColumn Header="Naziv Artikla" Binding="{Binding naziv}" Width="*"/>
+                <DataGridTextColumn Header="Ulazna Cijena" Binding="{Binding ucijena}" Width="*"/>
+                <DataGridTextColumn Header="Marža" Binding="{Binding marza}" Width="*"/>
+                <DataGridTextColumn Header="Izlazna Cijena" Binding="{Binding ICijena}" Width="*"/>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>
