@@ -14,6 +14,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+/*
+ Sistematizacija prvog dijela kursa iz C# WPF-a 
+    CRUD - unos, prikaz, izmjena, brisanje i pretraga podataka za artikle, urađen. 
+    CRUD za korisnike sa login provjerom ostala validacija sa FLUENTValidatorom da se imlementira u XAML-u
+ 
+ */
 namespace WpfCRUD
 {
     /// <summary>
