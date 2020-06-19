@@ -75,17 +75,17 @@ namespace WpfCRUD
 
 
         //has code unikatno vraća vrijednost određenog objekta
-        public override int GetHashCode()
-        {
-            if (naziv != null) 
-            {
-                return sifra + naziv.GetHashCode();
-            }
-            else
-            {
-                return sifra;
-            }
-        }
+        //public override int GetHashCode()
+        //{
+        //    if (naziv != null) 
+        //    {
+        //        return sifra + naziv.GetHashCode();
+        //    }
+        //    else
+        //    {
+        //        return sifra;
+        //    }
+        //}
         
     }
 }

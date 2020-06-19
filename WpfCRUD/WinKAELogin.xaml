@@ -19,8 +19,18 @@
                         <TextBox.Text>
                             <Binding Path="ime" UpdateSourceTrigger="Explicit">
                                 <Binding.ValidationRules>
-                        <!-- local u ovom slučaju predstavlja namespace u kom će tražiti klasu validacije -->
-                                    <!--<local:clsValidate1/>-->
+                                    <local:clsValidateString/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <Label Content="Prezime:" FontSize="20" HorizontalAlignment="Right"/>
+                    <TextBox FontSize="20" Margin="10 5 5 10" TextAlignment="Center">
+                        <TextBox.Text>
+                            <Binding Path="prezime" UpdateSourceTrigger="Explicit">
+                                <Binding.ValidationRules>
+                                    <!-- local u ovom slučaju predstavlja namespace u kom će tražiti klasu validacije -->
+                                    <local:clsValidateString/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -31,7 +41,7 @@
                             <Binding Path="jmbg" UpdateSourceTrigger="Explicit">
                                 <Binding.ValidationRules>
                                     <!-- local u ovom slučaju predstavlja namespace u kom će tražiti klasu validacije -->
-                                    <!--<local:clsValidateJMBG/>-->
+                                    <local:clsValidateJMBG/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -53,18 +63,7 @@
                             <Binding Path="god" UpdateSourceTrigger="Explicit">
                                 <Binding.ValidationRules>
                                     <!-- local u ovom slučaju predstavlja namespace u kom će tražiti klasu validacije -->
-
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
-                    </TextBox>
-                    <Label Content="Prezime:" FontSize="20" HorizontalAlignment="Right"/>
-                    <TextBox FontSize="20" Margin="10 5 5 10" TextAlignment="Center">
-                        <TextBox.Text>
-                            <Binding Path="prezime" UpdateSourceTrigger="Explicit">
-                                <Binding.ValidationRules>
-                                    <!-- local u ovom slučaju predstavlja namespace u kom će tražiti klasu validacije -->
-                                    
+                                    <local:clsValidateGod/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -83,7 +82,7 @@
                     <Label Content="Lozinka:" FontSize="20" HorizontalAlignment="Right"/>
                     <TextBox FontSize="20" Margin="10 5 5 10" TextAlignment="Center">
                         <TextBox.Text>
-                            <Binding Path="prezime" UpdateSourceTrigger="Explicit">
+                            <Binding Path="lozinka" UpdateSourceTrigger="Explicit">
                                 <Binding.ValidationRules>
                                     <!-- local u ovom slučaju predstavlja namespace u kom će tražiti klasu validacije -->
                                     

@@ -44,6 +44,8 @@ namespace WpfCRUD
             }
         }
 
+        clsKorisnik sk = null; 
+
         public WinKAELogin()
         {
             InitializeComponent();
@@ -84,7 +86,7 @@ namespace WpfCRUD
 
         private void btnEK(object sender, RoutedEventArgs e)
         {            
-            if (dgKorisnici.SelectedItem != null)
+            if (sk != null)
             {
                 MessageBoxResult result = MessageBox.Show("Da li stvarno želiš da izmijeniš selektovani podatak?", "Izmjena",
                                           MessageBoxButton.YesNo,
@@ -103,7 +105,7 @@ namespace WpfCRUD
 
         private void btnDK(object sender, RoutedEventArgs e)
         {
-            if (dgKorisnici.SelectedItem != null)
+            if (sk != null)
             {
                 MessageBoxResult result = MessageBox.Show("Da li stvarno želiš da obrišeš selektovani podatak?", "Brisanje", 
                                           MessageBoxButton.YesNo, 
@@ -113,7 +115,7 @@ namespace WpfCRUD
                 if (result == MessageBoxResult.Yes)
                 {
                     //db.korisnici.ToList();
-                    db.korisnici.Remove(dgKorisnici.SelectedItem as clsKorisnik);
+                    db.korisnici.Remove(sk);
                     db.SaveChanges();
                     dgKorisnici.ItemsSource = db.korisnici.ToList();
                 }
@@ -124,8 +126,11 @@ namespace WpfCRUD
         {
             if (dgKorisnici.SelectedItem != null)
             {
+                //pitati prof jer je u istoj formi
                 DataContext = dgKorisnici.SelectedItem;
+                sk = dgKorisnici.SelectedItem as clsKorisnik;
             }
+            else sk = null;
             
         }
 

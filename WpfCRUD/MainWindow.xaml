@@ -6,6 +6,48 @@
         xmlns:local="clr-namespace:WpfCRUD"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <TabControl>
+        <TabItem Header="Racuni" FontSize="18">
+            <StackPanel Orientation="Horizontal">
+                <DockPanel>
+                    <StackPanel Name="UnosRac" DockPanel.Dock="Top" Orientation="Horizontal">
+                        <Label Content="Šifra artikla:" FontSize="20" HorizontalAlignment="Right"/>
+                        <TextBox Text="{Binding tSifra, UpdateSourceTrigger=Explicit}" MinWidth="50"/>
+                        <Label Content="Količina:" FontSize="20" HorizontalAlignment="Right"/>
+                        <TextBox Text="{Binding tKol, UpdateSourceTrigger=Explicit}" MinWidth="50"/>
+                        <Button Content="Dodaj" FontSize="18" Click="btnUnosStavke"/>
+                    </StackPanel>
+                    <UniformGrid DockPanel.Dock="Bottom" Columns="2">
+                        <Label Content="Total: " HorizontalAlignment="Right"/>
+                        <Label Content="{Binding total, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right"/>
+                        <Button Content="Izdaj" Click="btnIzdajRacun"/>
+                        <Button Content="Ponisti"/>
+                    </UniformGrid>
+                    <DataGrid Name="dgStavke" ColumnWidth="*"/>
+                    <!--<DataGrid Name="dgStavke" AutoGenerateColumns="False" FontSize="24" IsReadOnly="True" ColumnWidth="*" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="dgArtikliSelektovano" Width="110">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Šifra artikla" Binding="{Binding sifra}" Width="*"/>
+                                <DataGridTextColumn Header="Naziv" Binding="{Binding naziv}" Width="*"/>
+                                <DataGridTextColumn Header="Količina" Binding="{Binding kolicina}" Width="*"/>
+                                <DataGridTextColumn Header="Iznos" Binding="{Binding zbir}" Width="*"/>
+                            </DataGrid.Columns>
+                       </DataGrid>-->
+                </DockPanel>
+                <DataGrid Name="dgRacuni" ColumnWidth="*"/>
+                <!--<DataGrid Name="dgRacuni" AutoGenerateColumns="False" FontSize="24" IsReadOnly="True" ColumnWidth="*" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="dgArtikliSelektovano" Width="110">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Redni BR računa" Binding="{Binding rbr}" Width="*"/>
+                        <DataGridTextColumn Header="Vrijeme izdavanja" Binding="{Binding vrijemeIzdavanja}" Width="*"/>
+                        <DataGridTextColumn Header="Total" Binding="{Binding total}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>-->
+                
+                   
+              
+            </StackPanel>
+            
+        </TabItem>
+        <TabItem Header="Artikli" FontSize="18">
     <DockPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
             <Label Content="pretraga" FontSize="20" Margin="5"/>
@@ -16,20 +58,20 @@
                 <Button Content="ADD Artikal" FontSize="20" Margin="10 20 5 10"  Click="btnA"/>
                 <Button Content="EDIT Artikal" FontSize="20" Margin="10 5 5 10" Click="btnE"/>
                 <Button Content="DEL Artikal" FontSize="20" Margin="10 5 5 10" Click="btnD"/>
-                
                 <TextBlock Text="____________" FontSize="20" Margin="10 5 5 10" TextAlignment="Center"/>
                 <Button Content="KORISNIK MGMT" FontSize="24" Margin="10 5 5 10" Click="btnKorisnik"/>
             </StackPanel>
         </GroupBox>
-        <DataGrid Name="dgArtikli" AutoGenerateColumns="False" FontSize="24" IsReadOnly="True" ColumnWidth="*" AlternatingRowBackground="LightBlue" AlternationCount="2">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Šifra Artikla" Binding="{Binding sifra}" Width="*"/>
-                <DataGridTextColumn Header="Naziv Artikla" Binding="{Binding naziv}" Width="*"/>
-                <DataGridTextColumn Header="Ulazna Cijena" Binding="{Binding ucijena}" Width="*"/>
-                <DataGridTextColumn Header="Marža" Binding="{Binding marza}" Width="*"/>
-                <DataGridTextColumn Header="Izlazna Cijena" Binding="{Binding ICijena}" Width="*"/>
-                
-            </DataGrid.Columns>
-        </DataGrid>
-    </DockPanel>
+                <DataGrid Name="dgArtikli" AutoGenerateColumns="False" FontSize="24" IsReadOnly="True" ColumnWidth="*" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="dgArtikliSelektovano">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Šifra Artikla" Binding="{Binding sifra}" Width="*"/>
+                        <DataGridTextColumn Header="Naziv Artikla" Binding="{Binding naziv}" Width="*"/>
+                        <DataGridTextColumn Header="Ulazna Cijena" Binding="{Binding ucijena}" Width="*"/>
+                        <DataGridTextColumn Header="Marža" Binding="{Binding marza}" Width="*"/>
+                        <DataGridTextColumn Header="Izlazna Cijena" Binding="{Binding ICijena}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </TabItem>
+    </TabControl>
 </Window>

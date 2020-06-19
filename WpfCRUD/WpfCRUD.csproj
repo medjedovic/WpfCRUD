@@ -17,6 +17,7 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -135,9 +136,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="clsArtKol.cs" />
     <Compile Include="clsEF.cs" />
     <Compile Include="clsKorisnik.cs" />
-    <Compile Include="clsValFluentStr.cs" />
+    <Compile Include="clsRacun.cs" />
+    <Compile Include="Validatori\clsValFluentStr.cs" />
+    <Compile Include="Validatori\clsValidateGod.cs" />
+    <Compile Include="Validatori\clsValidateJMBG.cs" />
+    <Compile Include="Validatori\clsValidateString.cs" />
     <Compile Include="WinAE.xaml.cs">
       <DependentUpon>WinAE.xaml</DependentUpon>
     </Compile>
